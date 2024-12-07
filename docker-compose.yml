@@ -1,0 +1,21 @@
+services:
+
+  pg_db:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: stunk
+    ports:
+      - 5432:5432
+
+  redis_db:
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
+    environment:
+      REDIS_USER: redis
+      REDIS_PASSWORD: example
