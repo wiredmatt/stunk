@@ -147,3 +147,26 @@ Adjust analysis parameters in `stunk/config.py`
 - Moving average periods
 - Visualization settings
 - News search queries
+
+## Dependencies
+
+### Core
+
+- docker
+- docker-compose
+- python
+- poetry
+- postgres
+- redis
+
+### Libraries
+
+- yfinance
+- pandas
+- matplotlib
+- newsapi-python
+- python-dotenv
+- python-telegram-bot
+- sqlalchemy
+- redis
+- psycopg2-binary
