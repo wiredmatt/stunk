@@ -12,8 +12,8 @@ A Python tool that analyzes global market trends using the `VWRA.L` ETF (Vanguar
 ## Screenshots
 
 <div style="display: flex; align-items: flex-start;">
-    <img src="./docs/screenshots/ss_desktop.png" width="88%" height="250px" alt="Desktop Demo"/>
-    <img src="./docs/screenshots/ss_mobile.jpg" width="22%" height="250px" alt="Mobile Demo"/>
+    <img src="./docs/screenshots/ss_desktop.png" width="88%" height="300px" alt="Desktop Demo"/>
+    <img src="./docs/screenshots/ss_mobile.jpg" width="22%" height="300px" alt="Mobile Demo"/>
 </div>
 
 ## Installation
@@ -32,13 +32,15 @@ docker-compose up -d # redis & postgres
 ```
 
 4. Set up Telegram bot with BotFather - **OPTIONAL**
-   i. Sign up at [Telegram](https://t.me/BotFather)
-   ii. Create a bot and get the token
-   iii. Send the bot a message and check for your chat ID in [getUpdates endpoint](https://api.telegram.org/bot{our_bot_token}/getUpdates)
+
+- Sign up with [BotFather](https://t.me/BotFather)
+- Create a bot and get the token
+- Send the bot a message and check for your chat ID in [getUpdates endpoint](https://api.telegram.org/bot{our_bot_token}/getUpdates)
+
 5. Set up environment variables
-   i. `cp .env.example .env`
-   ii. Sign up at [NewsAPI](https://newsapi.org) to get a free API key
-   iii. Set `TELEGRAM_ALLOWED_CHAT_IDS` with the value of your chat ID (from step [4](#4-set-up-telegram-bot-with-botfather)) - **OPTIONAL**
+   - `cp .env.example .env`
+   - Sign up at [NewsAPI](https://newsapi.org) to get a free API key
+   - Set `TELEGRAM_ALLOWED_CHAT_IDS` with the value of your chat ID (from step [4](#4-set-up-telegram-bot-with-botfather)) - **OPTIONAL**
 
 ## Usage
 
