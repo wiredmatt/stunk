@@ -12,8 +12,8 @@ A Python tool that analyzes global market trends using the `VWRA.L` ETF (Vanguar
 ## Screenshots
 
 <div style="display: flex; align-items: flex-start;">
-    <img src="./docs/screenshots/ss_desktop.png" width="88%" height="250px" alt="Desktop Demo"/>
-    <img src="./docs/screenshots/ss_mobile.jpg" width="22%" height="250px" alt="Mobile Demo"/>
+    <img src="./docs/screenshots/ss_mobile.jpg" width="23%" height="400px" alt="Mobile Demo"/>
+    <img src="./docs/screenshots/ss_desktop.png" width="76%" height="400px" alt="Desktop Demo"/>
 </div>
 
 ## Installation
