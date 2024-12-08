@@ -1,6 +1,6 @@
-# Market Trend Analyzer
+# stunk - Market Trend Analyzer
 
-A Python tool that analyzes global market trends using the VWRA.L ETF (Vanguard FTSE All-World UCITS ETF) and provides relevant market news.
+A Python tool that analyzes global market trends using the `VWRA.L` ETF (Vanguard FTSE All-World UCITS ETF) and provides relevant market news.
 
 ## Features
 
@@ -9,30 +9,56 @@ A Python tool that analyzes global market trends using the VWRA.L ETF (Vanguard 
 - Relevant news articles based on market sentiment
 - Configurable analysis parameters
 
+## Screenshots
+
+<div style="display: flex; align-items: flex-start;">
+    <img src="./docs/screenshots/ss_desktop.png" width="88%" height="250px" alt="Desktop Demo"/>
+    <img src="./docs/screenshots/ss_mobile.jpg" width="22%" height="250px" alt="Mobile Demo"/>
+</div>
+
 ## Installation
 
 1. Clone the repository
 2. Install dependencies using Poetry:
+
 ```bash
 poetry install
 ```
 
-3. Set up your NewsAPI key:
-   - Sign up at [NewsAPI](https://newsapi.org) to get a free API key
-   - Create a `.env` file in the project root
-   - Add your API key: `NEWS_API_KEY=your_api_key_here`
+3. Start docker containers
+
+```bash
+docker-compose up -d # redis & postgres
+```
+
+4. Set up Telegram bot with BotFather - **OPTIONAL**
+   i. Sign up at [Telegram](https://t.me/BotFather)
+   ii. Create a bot and get the token
+   iii. Send the bot a message and check for your chat ID in [getUpdates endpoint](https://api.telegram.org/bot{our_bot_token}/getUpdates)
+5. Set up environment variables
+   i. `cp .env.example .env`
+   ii. Sign up at [NewsAPI](https://newsapi.org) to get a free API key
+   iii. Set `TELEGRAM_ALLOWED_CHAT_IDS` with the value of your chat ID (from step [4](#4-set-up-telegram-bot-with-botfather)) - **OPTIONAL**
 
 ## Usage
 
-Run the analysis:
+**Run the analysis**
+
 ```bash
 poetry run market_trend
 ```
 
 The tool will:
+
 1. Analyze the market trend using VWRA.L data
 2. Generate a visualization (saved as market_trend.png)
 3. Display relevant market news
+
+**Run the Telegram bot**
+
+```bash
+poetry run telegram_bot
+```
 
 ## Project Structure
 
@@ -51,10 +77,18 @@ The tool will:
     - `database.py`: SQLAlchemy session management
     - `cache.py`: Cache implementation
     - `connections.py`: Database & Cache connection management
+  - `tests/`
+    - `conftest.py`: Shared fixtures
+    - `test_market_analyzer.py`: Tests for market trend analysis
+    - `test_market_trend.py`: Tests for market trend generation
+    - `test_news_fetcher.py`: Tests for news fetching
+    - `test_telegram_bot.py`: Tests for Telegram bot
+    - `test_visualizer.py`: Tests for market visualization
 
 ## Configuration
 
-Adjust analysis parameters in `config.py`:
+Adjust analysis parameters in `stunk/config.py`
+
 - Analysis period
 - Moving average periods
 - Visualization settings
